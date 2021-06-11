@@ -21,26 +21,10 @@ $CSVPathName = "StudentGroups.csv"
 Import-Module MicrosoftTeams
 Connect-MicrosoftTeams
 
-#Create user hash table to check against
-#First create empty Hash table
-$ChannelHash = $null
-$ChannelHash = @{}
-
-#Get all team channels
-$ChannelArr = Get-TeamChannel -GroupId $GroupId
-
-$ChannelArr.Count
-
-#Add Team channels to hash table (User= email is key UserId is the Teams numeric identifier)
-foreach($singleMember in $AllMembersArray)
-{
-    $ChannelArr.add($ChannelArr., $singleMember.DisplayName)
-}
-
 #Read csv in
 $SGObjectsArray = Import-Csv $CSVPathName
 
 #process data
 $SGObjectsArray | ForEach-Object{
-    #Add-StudentGroup-Channel -GroupId $GroupId -ChannelName $_.GroupName
+    Add-StudentGroup-Channel -GroupId $GroupId -ChannelName $_.GroupName
 }
