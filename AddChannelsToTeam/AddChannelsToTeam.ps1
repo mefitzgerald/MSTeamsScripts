@@ -15,7 +15,7 @@
 
 #Set-up your user variables ONLY CHANGE THESE LINES
 $GroupId = "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXX"
-$CSVPathName = "StudentGroups.csv"
+$CSVPathName = "XXXXXXXXXXXX.csv"
 
 #Set-up and connect Teams
 Import-Module MicrosoftTeams

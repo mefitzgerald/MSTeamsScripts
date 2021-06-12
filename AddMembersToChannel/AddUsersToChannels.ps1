@@ -14,7 +14,7 @@
 
 #Set-up your user variables ONLY CHANGE THESE LINES
 $GroupId = "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXX"
-$CSVPathName = "StudentGroups.csv"
+$CSVPathName = "XXXXXXXXXX.csv"
 
 #Set-up and connect Teams
 Import-Module MicrosoftTeams
@@ -41,7 +41,7 @@ $SGObjectsArray | ForEach-Object{
     }
     else
     {
-        Write-Host "Attempting to add student2 email:" $_.Member3Email $_.ChannelName
+        Write-Host "Attempting to add student3 email:" $_.Member3Email $_.ChannelName
         Add-Users-To-Channel -GroupId $GroupId -ChannelName $_.ChannelName -ChannelMember $_.Member3Email
     }
 }
